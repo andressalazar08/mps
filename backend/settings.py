@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',  # Para construir la API REST
     'planning',        # Tu aplicación de planificación
+     'corsheaders',    # Para permitir solicitudes de origen cruzado
 ]
 
 MIDDLEWARE = [
@@ -53,6 +54,12 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+
+]
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",  # URL del frontend Next.js
 ]
 
 ROOT_URLCONF = 'backend.urls'
