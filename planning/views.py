@@ -18,3 +18,8 @@ class CustomerOrderListCreateView(generics.ListCreateAPIView):
 class MPSListCreateView(generics.ListCreateAPIView):
     queryset = MasterProductionSchedule.objects.all()
     serializer_class = MPSSerializer
+
+class ProductPartialUpdateView(generics.UpdateAPIView):
+    queryset = Product.objects.all()
+    serializer_class = ProductSerializer
+    http_method_names = ['patch']
