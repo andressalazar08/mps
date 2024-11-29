@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import ProductsTable from '../components/ProductsTable';
 
 const ProductsPage = () => {
   const [products, setProducts] = useState([]);
@@ -17,25 +18,9 @@ const ProductsPage = () => {
 
   return (
     <div>
-      <h1>Lista de Productos</h1>
-      <ul>
-        {products.map(product => (
-          <li key={product.id}>
-            <h2>{product.name}</h2>
-            <p>SKU: {product.sku}</p>
-            <p>Descripción: {product.description}</p>
-            <p>Tiempo de suministro: {product.lead_time} days</p>
-            <p>Tecnología: {product.technology_name}</p>
-            <p>Organización: {product.organization_name}</p>
-            <p>Distribución: {product.distribution_name}</p>
-            <p>Canal: {product.channel_name}</p>
-            <p>Inventario : {product.stock}</p>
-            <p>Activo: {product.is_active ? 'Si' : 'No'}</p>
-            <p>Planeable: {product.is_plannable ? 'Si' : 'No'}</p>
-          </li>
-        ))}
-      </ul>
-    </div>
+    <h1>Lista de Productos</h1>
+    <ProductsTable products={products} />
+  </div>
   );
 };
 
