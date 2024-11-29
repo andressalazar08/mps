@@ -8,11 +8,11 @@ const ProductsTable = ({ products }) => {
   useEffect(() => {
     new Tabulator(tableRef.current, {
       data: products,
-      layout: "fitColumns",
+    //   layout: "fitColumns",
       columns: [
         { title: "SKU", field: "sku" },
         { title: "Descripción", field: "description" },
-        // { title: "Tiempo de fabricación", field: "lead_time" },
+        { title: "Política", field: "lead_time" },
         { title: "Tecnología", field: "technology_name" },
         { title: "Organización", field: "organization_name" },
         { title: "Distribución", field: "distribution_name" },
