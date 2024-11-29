@@ -29,10 +29,28 @@ class ProductSerializer(serializers.ModelSerializer):
     organization = serializers.PrimaryKeyRelatedField(queryset=Organization.objects.all())
     distribution = serializers.PrimaryKeyRelatedField(queryset=Distribution.objects.all())
     channel = serializers.PrimaryKeyRelatedField(queryset=Channel.objects.all())
+    
+    technology_name = serializers.SerializerMethodField()
+    organization_name = serializers.SerializerMethodField()
+    distribution_name = serializers.SerializerMethodField()
+    channel_name = serializers.SerializerMethodField()
+
 
     class Meta:
         model = Product
         fields = '__all__'
+        
+    def get_technology_name(self, obj):
+        return obj.technology.name
+
+    def get_organization_name(self, obj):
+        return obj.organization.name
+
+    def get_distribution_name(self, obj):
+        return obj.distribution.name
+
+    def get_channel_name(self, obj):
+        return obj.channel.name
 
 class CustomerOrderSerializer(serializers.ModelSerializer):
     class Meta:

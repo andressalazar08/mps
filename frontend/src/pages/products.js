@@ -17,17 +17,21 @@ const ProductsPage = () => {
 
   return (
     <div>
-      <h1>Products</h1>
+      <h1>Lista de Productos</h1>
       <ul>
         {products.map(product => (
           <li key={product.id}>
             <h2>{product.name}</h2>
             <p>SKU: {product.sku}</p>
-            <p>Description: {product.description}</p>
-            <p>Lead Time: {product.lead_time} days</p>
-            <p>Stock: {product.stock}</p>
-            <p>Active: {product.is_active ? 'Yes' : 'No'}</p>
-            <p>Plannable: {product.is_plannable ? 'Yes' : 'No'}</p>
+            <p>Descripción: {product.description}</p>
+            <p>Tiempo de suministro: {product.lead_time} days</p>
+            <p>Tecnología: {product.technology_name}</p>
+            <p>Organización: {product.organization_name}</p>
+            <p>Distribución: {product.distribution_name}</p>
+            <p>Canal: {product.channel_name}</p>
+            <p>Inventario : {product.stock}</p>
+            <p>Activo: {product.is_active ? 'Si' : 'No'}</p>
+            <p>Planeable: {product.is_plannable ? 'Si' : 'No'}</p>
           </li>
         ))}
       </ul>
