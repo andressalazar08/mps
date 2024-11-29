@@ -1,14 +1,47 @@
 from django.db import models
 
+class Technology(models.Model):
+    name = models.CharField(max_length=255, null=True, blank=True)
+
+    def __str__(self):
+        return self.name
+
+class Organization(models.Model):
+    name=models.CharField(max_length=255,null=True, blank=True)
+    
+    def __str__(self):
+        return self.name
+
+class Distribution(models.Model):
+    name=models.CharField(max_length=255, null=True, blank=True)
+    
+    def __str__(self):
+        return self.name
+    
+class Channel(models.Model):
+    name=models.CharField(max_length=255,null=True, blank=True)
+    
+    def __str__(self):
+        return self.name
+
 class Product(models.Model):
-    name = models.CharField(max_length=255)
     sku = models.CharField(max_length=50, unique=True)  # Código único
     description = models.TextField(blank=True, null=True)
     lead_time = models.PositiveIntegerField()  # Tiempo de fabricación (en días)
     stock = models.PositiveIntegerField(default=0)  # Inventario inicial
+    rute=models.CharField(max_length=255, default="") # Ruta principal del producto
+    technology = models.ForeignKey(Technology, on_delete=models.CASCADE)  # Relación con Technology
+    organization=models.ForeignKey(Organization, on_delete=models.CASCADE, default=1) # Relación con Organization
+    channel=models.ForeignKey(Channel, on_delete=models.CASCADE, default=1) # Canal principal del producto
+    distribution=models.ForeignKey(Distribution, on_delete=models.CASCADE, default=1) # Distribución principal del producto
+    is_active=models.BooleanField(default=True) # Para saber si el producto está activo o no
+    is_plannable=models.BooleanField(default=True) # Para saber si el producto es planificable o no 
+    
 
     def __str__(self):
         return self.name
+    
+    
 
 
 class CustomerOrder(models.Model):
