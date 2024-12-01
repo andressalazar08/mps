@@ -1,0 +1,22 @@
+/* Estilos para la tabla de planificación */
+.tabulator {
+    border: 2px solid #4CAF50; /* Borde verde para la tabla */
+  }
+  
+  .tabulator .tabulator-header .tabulator-col {
+    border-right: 1px solid #4CAF50; /* Borde derecho para las columnas del encabezado */
+  }
+  
+  .tabulator .tabulator-row {
+    border-bottom: 1px solid #4CAF50; /* Borde inferior para las filas */
+  }
+  
+  .tabulator .tabulator-cell {
+    border-right: 1px solid #4CAF50; /* Borde derecho para las celdas */
+  }
+  
+  .tabulator .tabulator-header .tabulator-col:last-child,
+  .tabulator .tabulator-row .tabulator-cell:last-child {
+    border-right: none; /* Quitar borde derecho de la última columna */
+  }
+  
