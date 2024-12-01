@@ -1,66 +1,3 @@
-// import React, { useEffect, useRef } from 'react';
-// import { TabulatorFull as Tabulator } from 'tabulator-tables';
-// import 'tabulator-tables/dist/css/tabulator.min.css';
-// import './PlanningTable.css'; // Importar el archivo CSS personalizado
-
-// const PlanningTable = ({ data }) => {
-//   const tableRef = useRef(null);
-  
-
-
-//   useEffect(() => {
-
-//     const dataFormatter = (cell) => {
-//       const value = cell.getValue();
-//       if (value === null || value === undefined || value === "") {
-//         return "";
-//       }
-//       if (typeof value === "number") {
-//         // Formatear números con separadores de miles
-//         return `<span style="font-size: 12.5px;">${value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</span>`;
-//       } else {
-//         // Aplicar tamaño de letra al texto
-//         return `<span style="font-size: 12.5px;">${value}</span>`;
-//       }
-//     };
-
-//     const inventoryMutator = (value, data, type, params, component) => {
-//       //console.log("Datos totales",(data));
-//       if (data.concept === "Inventario final") {
-//         return data.data; 
-//       }
-//       return value;
-      
-//     };
-
-//     new Tabulator(tableRef.current, {
-//       data: data,
-//       layout: "fitColumns",
-//       columns: [
-//         { title: "", field: "concept",width:130 },
-//         // { title: "DATOS", field: "data",width:400 },
-//         { 
-//           title: "DATOS", 
-//           field: "data", 
-//           width: 410,
-//           formatter: dataFormatter,
-//           hozAlign: "center",
-//           headerHozAlign: "center"
-//         },
-//         { title: "Ene-25", field: "january" , headerHozAlign: "center",formatter: dataFormatter, hozAlign: "center", mutator: inventoryMutator},
-//         { title: "Feb-25", field: "february" ,headerHozAlign: "center",formatter: dataFormatter, hozAlign: "center", mutator: inventoryMutator},
-//         { title: "Mar-25", field: "march",headerHozAlign: "center",formatter: dataFormatter, hozAlign: "center" , mutator: inventoryMutator},
-//         { title: "Abr-25", field: "april" ,headerHozAlign: "center",formatter: dataFormatter, hozAlign: "center", mutator: inventoryMutator},
-//         { title: "May-25", field: "may",headerHozAlign: "center",formatter: dataFormatter, hozAlign: "center", mutator: inventoryMutator},
-//       ],
-//     });
-//   }, [data]);
-
-//   return <div ref={tableRef}></div>;
-// };
-
-// export default PlanningTable;
-
 
 import React, { useEffect, useRef } from 'react';
 import { TabulatorFull as Tabulator } from 'tabulator-tables';
@@ -87,26 +24,7 @@ const PlanningTable = ({ data }) => {
       }
     };
 
-    // const inventoryMutator = (value, data, type, params, cell) => {
-    //   if (data.concept === "Inventario final") {
-    //     const tableData = tableInstance.current.getData(); // Obtener los datos de la tabla
-    //     const productionRow = tableData.find(row => row.concept === "Cantidad a Producir");
-    //     const forecastRow = tableData.find(row => row.concept === "Pronostico");
-    //     const previousInventoryRow = tableData.find(row => row.concept === "Inventario final");
-
-    //     const previousInventory = previousInventoryRow ? previousInventoryRow.data :data.data
-    //     const production = productionRow ? productionRow.january || 0 : 0;
-    //     const forecast = forecastRow ? forecastRow.january || 0 : 0;
-
-    //     console.log("Previous Inventory:", previousInventory);
-    //     console.log("Production:", production);
-    //     console.log("Forecast:", forecast);
-
-    //     return previousInventory + production - forecast;
-    //   }
-    //   return value;
-    // };
-
+    
     
     const inventoryMutator = (value, data, type, params, cell) => {
       const tableData = tableInstance.current.getData(); // Obtener los datos de la tabla
