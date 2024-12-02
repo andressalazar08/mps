@@ -1,0 +1,33 @@
+/* Asegúrate de importar este archivo en tu proyecto */
+.left-align {
+  text-align: left;
+}
+
+table {
+  border-collapse: collapse; /* Elimina la separación entre los bordes */
+  width: 100%;
+  border: 1px solid #ddd; /* Bordes de la tabla */
+  border-radius: 8px; /* Esquinas redondeadas */
+  overflow: hidden; /* Asegura que las esquinas redondeadas se apliquen correctamente */
+}
+
+th, td {
+  border: 1px solid #ddd; /* Bordes de las celdas */
+  padding: 8px;
+}
+
+th {
+  background-color: #f2f2f2; /* Color de fondo para los encabezados */
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9; /* Color de fondo para las filas pares */
+}
+
+tr.cantidad-a-producir {
+  background-color: #d2dec8; /* Color de fondo distinto para la fila "Cantidad a producir" */
+}
+
+tr:hover {
+  background-color: #ddd; /* Color de fondo al pasar el ratón por encima */
+}
