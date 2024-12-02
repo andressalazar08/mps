@@ -1,3 +1,9 @@
 export const formatNumber = (number) => {
-    return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    if (number === "" || number === null || number === undefined || isNaN(number)) {
+      return "";
+    }
+    if (typeof number !== 'number') {
+      number = parseFloat(number);
+    }
+    return number.toLocaleString('en-US');
   };
