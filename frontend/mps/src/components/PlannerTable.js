@@ -43,7 +43,7 @@ const PlannerTable = ({ data, onCellEdit }) => {
       }
     }
     setTableData(newData);
-    newData[5].m1= formatNumber(newData[5].m1);
+    //newData[5].m1= formatNumber(newData[5].m1);
     
   };
 
