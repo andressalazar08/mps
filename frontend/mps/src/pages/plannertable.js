@@ -17,7 +17,9 @@ const HomePage = () => {
 
   const handleCellEdit = (rowIndex, field, value) => {
     const newData = [...tableData];
-    newData[rowIndex][field] = value;
+    // console.log("handle",value);
+    // console.log("handle2",parseFloat(value));
+    newData[rowIndex][field] = parseFloat(value);
     setTableData(newData);
   };
 
