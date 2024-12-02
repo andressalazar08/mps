@@ -37,3 +37,16 @@ tr.cantidad-a-producir {
 tr:hover {
   background-color: #ddd; /* Color de fondo al pasar el ratón por encima */
 }
+
+
+/* Ocultar las flechas de dirección en los inputs de tipo number */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  appearance: textfield; /* Standard */
+  -moz-appearance: textfield; /* Firefox */
+}

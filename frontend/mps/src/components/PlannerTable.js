@@ -1,5 +1,7 @@
 import React from 'react';
 import '../styles/PlannerTable.css';
+import { formatNumber } from '../utils/helpers';
+
 
 const PlannerTable = ({ data, onCellEdit }) => {
   const handleCellEdit = (rowIndex, field, value) => {
@@ -34,18 +36,18 @@ const PlannerTable = ({ data, onCellEdit }) => {
             {row.name}
             </td>
             <td  className="center-align">
-            {row.entradas}
+            {formatNumber(row.entradas)}
             </td>
             <td className="center-align">
               {row.editable ? (
                 <input
                   type="text"
-                  value={row.m1}
+                  value={formatNumber(row.m1)}
                   onChange={(e) => handleCellEdit(rowIndex, 'm1', e.target.value)}
                   className="center-align"
                 />
               ) : (
-                row.m1
+                formatNumber(row.m1)
               )}
               
             </td>
@@ -53,65 +55,65 @@ const PlannerTable = ({ data, onCellEdit }) => {
               {row.editable ? (
               <input
                 type="text"
-                value={row.m2}
+                value={formatNumber(row.m2)}
                 onChange={(e) => handleCellEdit(rowIndex, 'm2', e.target.value)}
                 className="center-align"
               />
               
             ) : (
-              row.m2
+              formatNumber(row.m2)
             )}
             </td>
             <td className="center-align">
               {row.editable ? (
               <input
                 type="text"
-                value={row.m3}
+                value={formatNumber(row.m3)}
                 onChange={(e) => handleCellEdit(rowIndex, 'm3', e.target.value)}
                 className="center-align"
               />
               
             ) : (
-              row.m3
+              formatNumber(row.m3)
             )}
             </td>
             <td className="center-align">
               {row.editable ? (
               <input
                 type="text"
-                value={row.m4}
+                value={formatNumber(row.m4)}
                 onChange={(e) => handleCellEdit(rowIndex, 'm4', e.target.value)}
                 className="center-align"
               />
               
             ) : (
-              row.m4
+              formatNumber(row.m4)
             )}
             </td>
             <td className="center-align">
               {row.editable ? (
               <input
                 type="text"
-                value={row.m5}
+                value={formatNumber(row.m5)}
                 onChange={(e) => handleCellEdit(rowIndex, 'm5', e.target.value)}
                 className="center-align"
               />
               
             ) : (
-              row.m5
+              formatNumber(row.m5)
             )}
             </td>
             <td className="center-align">
               {row.editable ? (
               <input
                 type="text"
-                value={row.m6}
+                value={formatNumber(row.m6)}
                 onChange={(e) => handleCellEdit(rowIndex, 'm6', e.target.value)}
                 className="center-align"
               />
               
             ) : (
-              row.m6
+              formatNumber(row.m6)
             )}
             </td>
           </tr>
