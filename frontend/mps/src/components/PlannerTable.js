@@ -30,78 +30,84 @@ const PlannerTable = ({ data, onCellEdit }) => {
       <tbody>
         {data.map((row, rowIndex) => (
           <tr key={row.id} className={row.name === "Cantidad a Producir" ? "cantidad-a-producir" : ""}>
-            <td>
+            <td  className="left-align">
             {row.name}
             </td>
-            <td>
+            <td  className="center-align">
             {row.entradas}
             </td>
-            <td>
+            <td className="center-align">
               {row.editable ? (
                 <input
                   type="text"
                   value={row.m1}
                   onChange={(e) => handleCellEdit(rowIndex, 'm1', e.target.value)}
+                  className="center-align"
                 />
               ) : (
                 row.m1
               )}
               
             </td>
-            <td>
+            <td className="center-align">
               {row.editable ? (
               <input
                 type="text"
                 value={row.m2}
                 onChange={(e) => handleCellEdit(rowIndex, 'm2', e.target.value)}
+                className="center-align"
               />
               
             ) : (
               row.m2
             )}
             </td>
-            <td>
+            <td className="center-align">
               {row.editable ? (
               <input
                 type="text"
                 value={row.m3}
                 onChange={(e) => handleCellEdit(rowIndex, 'm3', e.target.value)}
+                className="center-align"
               />
               
             ) : (
               row.m3
             )}
             </td>
-            <td>
+            <td className="center-align">
               {row.editable ? (
               <input
                 type="text"
                 value={row.m4}
                 onChange={(e) => handleCellEdit(rowIndex, 'm4', e.target.value)}
+                className="center-align"
               />
               
             ) : (
               row.m4
             )}
             </td>
-            <td>
+            <td className="center-align">
               {row.editable ? (
               <input
                 type="text"
                 value={row.m5}
                 onChange={(e) => handleCellEdit(rowIndex, 'm5', e.target.value)}
+                className="center-align"
               />
               
             ) : (
               row.m5
             )}
             </td>
-            <td>
+            <td className="center-align">
               {row.editable ? (
               <input
                 type="text"
                 value={row.m6}
                 onChange={(e) => handleCellEdit(rowIndex, 'm6', e.target.value)}
+                className="center-align"
               />
               
             ) : (

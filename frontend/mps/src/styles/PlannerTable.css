@@ -2,6 +2,9 @@
 .left-align {
   text-align: left;
 }
+.center-align {
+  text-align: center;
+}
 
 table {
   border-collapse: collapse; /* Elimina la separación entre los bordes */
@@ -11,13 +14,15 @@ table {
   overflow: hidden; /* Asegura que las esquinas redondeadas se apliquen correctamente */
 }
 
-th, td {
+td {
   border: 1px solid #ddd; /* Bordes de las celdas */
   padding: 8px;
-}
 
+}
 th {
-  background-color: #f2f2f2; /* Color de fondo para los encabezados */
+  border: 1px solid #ddd; /* Bordes de las celdas */
+  padding: 8px;
+  text-align: center; /* Centra el contenido de las celdas */
 }
 
 tr:nth-child(even) {
@@ -26,6 +31,7 @@ tr:nth-child(even) {
 
 tr.cantidad-a-producir {
   background-color: #d2dec8; /* Color de fondo distinto para la fila "Cantidad a producir" */
+ 
 }
 
 tr:hover {
