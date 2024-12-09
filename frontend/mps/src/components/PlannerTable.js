@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import '../styles/PlannerTable.css'; // Asegúrate de importar el archivo CSS
 import { formatNumber } from '../utils/helpers'; // Importa la función de formato
 
-const PlannerTable = ({ data, onCellEdit }) => {
+const PlannerTable = ({ data, onCellEdit, sku, description }) => {
   const [editingValue, setEditingValue] = useState({});
   const [tableData, setTableData] = useState(data);
 
@@ -51,10 +51,10 @@ const PlannerTable = ({ data, onCellEdit }) => {
     <table>
       <thead>
         <tr>
-          <th colSpan="8" className="left-align">SKU: 2400018913</th>
+          <th colSpan="8" className="left-align">SKU: {sku}</th>
         </tr>
         <tr>
-          <th colSpan="8" className="left-align">Descripción: VASO 150G YOGURT LATTI PREMIUM MELOCOTON FUNDA ALIVAL 2020 - V2</th>
+          <th colSpan="8" className="left-align">Descripción: {description} </th>
         </tr>
         <tr>
           <th className="left-align">Concepto</th>
@@ -68,7 +68,9 @@ const PlannerTable = ({ data, onCellEdit }) => {
         </tr>
       </thead>
       <tbody>
-        {tableData.map((row, rowIndex) => (
+        {tableData
+        .filter(row => row.id >= 3)
+        .map((row, rowIndex) => (
           <tr key={row.id} className={row.name === "Cantidad a Producir" ? "cantidad-a-producir" : ""}>
             <td className="left-align">{row.name}</td>
             <td className="center-align">{formatNumber(row.entradas)}</td>
