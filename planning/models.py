@@ -39,9 +39,15 @@ class Product(models.Model):
     
 
     def __str__(self):
-        return self.name
+        return self.description
     
-    
+class Forecast(models.Model):
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='forecasts')
+    month = models.PositiveIntegerField()  # Mes del pronóstico (1-12)
+    forecast_value = models.DecimalField(max_digits=10, decimal_places=2)  # Valor del pronóstico
+
+    def __str__(self):
+        return f"{self.product.sku} - Month {self.month}: {self.forecast_value}"    
 
 
 class CustomerOrder(models.Model):
