@@ -5,8 +5,8 @@ import Chart from '../components/Chart';
 
 const HomePage = () => {
   const [tableData, setTableData] = useState([
-    { id: 1, name: 2400050446},
-    { id: 2, name: "VASO GOLD-RELOAD 16 OZ TRASLUCIDO PP MAESTRO BIO 1.000 X 50"},
+    { id: 1, name: 2400026101},
+    { id: 2, name: "PLATO PANDO ESPUMADO 26 WAU! BLANCO PSE 480  20"},
     { id: 3, name: "Pronóstico", entradas: "", m1: 80000, m2: 70000 ,m3:70000,m4:70000,m5:0,m6:0,editable:false },
     { id: 4, name: "Forecast Adicional", entradas: "", m1: "", m2: "" ,m3:"",m4:"",m5:"",m6:"",editable:false },
     { id: 5, name: "Pedidos de venta", entradas: "", m1: "", m2: "" ,m3:"",m4:"",m5:"",m6:"",editable:false},

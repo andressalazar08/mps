@@ -26,8 +26,8 @@ class Distribution(models.Model):
         return self.name
 
 class Product(models.Model):
-    sku = models.CharField(max_length=50, unique=True, primary_key=True)  # Código único y PK
-    description = models.TextField(blank=True, null=True)
+    sku = models.CharField(max_length=100, unique=True, primary_key=True)  # Código único y PK
+    description = models.CharField(max_length=255,blank=True, null=True)
     policy = models.PositiveIntegerField() 
     rute = models.CharField(max_length=255, default="")  # Ruta principal del producto
     technology = models.ForeignKey(Technology, on_delete=models.CASCADE)  # Relación con Technology

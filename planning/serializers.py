@@ -55,6 +55,7 @@ class ProductSerializer(serializers.ModelSerializer):
 class ForecastSerializer(serializers.ModelSerializer):
     product = serializers.PrimaryKeyRelatedField(queryset=Product.objects.all())
 
+
     class Meta:
         model = Forecast
         fields = '__all__'
